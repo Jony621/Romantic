@@ -1,48 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#ff8fb1" />
-  <title>For My Love ♡</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="ambient ambient-one"></div>
-  <div class="ambient ambient-two"></div>
-  <div class="sparkles" aria-hidden="true"></div>
-
-  <main class="page-shell">
-    <div class="top-note">A LITTLE CORNER OF THE WORLD, JUST FOR YOU <span>♡</span></div>
-
-    <section class="love-card" aria-live="polite">
-      <div class="progress" aria-label="Page progress"><span id="progressBar"></span></div>
-      <p class="eyebrow" id="eyebrow">MY FAVORITE PERSON</p>
-
-      <div class="heart-stage" id="heartStage">
-        <button class="heart-button" id="heartButton" aria-label="Open my heart">
-          <span class="heart">♥</span>
-          <span class="heart-shine"></span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>For My Love</title>
+    <meta name="description" content="A little corner of the world, made with all my heart for you." />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="For My Love" />
+    <meta property="og:description" content="A little corner of the world, made with all my heart for you." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="For My Love" />
+    <meta name="twitter:description" content="A little corner of the world, made with all my heart for you." />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="stylesheet" href="./style.css" />
+    <script type="module" src="./script.js"></script>
+  </head>
+  <body>
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+    <section class="welcome-screen" id="welcome-screen" aria-labelledby="welcome-heading">
+      <p class="welcome-eyebrow">A LITTLE SURPRISE, JUST FOR YOU</p>
+      <h1 class="welcome-heading" id="welcome-heading">Someone has a little surprise for you…</h1>
+      <div class="envelope-scene" id="envelope-scene">
+        <article class="letter-card" id="letter-card" aria-hidden="true" inert>
+          <p class="letter-greeting">To my sweetest love,<br />my favorite person ❤️</p>
+          <p class="letter-note">I made this little surprise just for you, with pieces of my heart hidden in every page.</p>
+          <p class="letter-question">Are you ready to open my heart? ♡</p>
+          <button class="letter-open-button" id="open-heart-button" type="button" tabindex="-1">
+            Open My Heart ♡
+          </button>
+        </article>
+        <button
+          class="envelope-button"
+          id="envelope-button"
+          type="button"
+          aria-label="Open the envelope for Masrafi Raka"
+          aria-expanded="false"
+          aria-controls="letter-card"
+        >
+          <span class="envelope-back" aria-hidden="true"></span>
+          <span class="envelope-flap" aria-hidden="true"></span>
+          <span class="envelope-pocket" aria-hidden="true"></span>
+          <span class="envelope-seal" aria-hidden="true">♥</span>
+          <span class="envelope-name">For Masrafi Raka</span>
+          <span class="envelope-hint">Tap the envelope</span>
         </button>
-        <p class="tap-hint">tap the heart, my love</p>
       </div>
-
-      <div class="content-stage" id="contentStage" hidden>
-        <div class="ornament" id="ornament">✧･ﾟ: *✧･ﾟ:* ♡ *:･ﾟ✧*:･ﾟ✧</div>
-        <h1 id="heading">For My Love</h1>
-        <p class="subheading" id="subheading"></p>
-        <div class="divider"><span>♡</span></div>
-        <p class="message" id="message"></p>
-      </div>
-
-      <div class="controls">
-        <button class="next-button" id="nextButton" hidden>Next little secret <span>♡</span></button>
-        <p class="step-count" id="stepCount">A tiny love story · 1 of 5</p>
-      </div>
+      <p class="welcome-footer">Made with all my heart <span aria-hidden="true">♡</span></p>
     </section>
-
-    <footer>made with all my heart <span>♥</span> for you</footer>
-  </main>
-  <script src="script.js"></script>
-</body>
+    <main class="page-shell" id="story-site" hidden>
+      <div class="top-note">
+        A LITTLE CORNER OF THE WORLD, JUST FOR YOU <span aria-hidden="true">♡</span>
+      </div>
+      <section class="love-card" aria-live="polite" aria-atomic="true">
+        <div class="progress" role="progressbar" aria-label="Story progress" aria-valuemin="0" aria-valuemax="6" aria-valuenow="0">
+          <span id="progress-fill"></span>
+        </div>
+        <p class="eyebrow" id="story-eyebrow">MY FAVORITE PERSON</p>
+        <div class="heart-stage entering" id="heart-stage">
+          <button class="heart-button" id="heart-button" type="button" aria-label="Open my heart">
+            <span class="heart" aria-hidden="true">♥</span>
+            <span class="heart-shine" aria-hidden="true"></span>
+          </button>
+          <p class="tap-hint">tap the heart, my love</p>
+        </div>
+        <div class="content-stage" id="content-stage" hidden>
+          <div class="story-watermark" id="story-watermark" aria-hidden="true" hidden></div>
+          <div class="ornament" id="story-ornament" aria-hidden="true"></div>
+          <h1 id="story-heading"></h1>
+          <p class="subheading" id="story-subheading"></p>
+          <div class="divider" aria-hidden="true"><span>♡</span></div>
+          <p class="message" id="story-message"></p>
+        </div>
+        <div class="controls">
+          <button class="next-button" id="next-button" type="button" hidden>
+            <span id="next-label">Next little secret</span>
+            <span aria-hidden="true">♡</span>
+          </button>
+          <button class="music-button" id="music-button" type="button" aria-label="Play song" aria-pressed="false">
+            <span class="music-icon" aria-hidden="true">♫</span>
+            <span id="music-label">Play our song</span>
+          </button>
+          <audio id="love-song" src="./audio/prithibir-joto-sukh.mp3" preload="metadata" loop></audio>
+          <p class="step-count" id="step-count">A tiny love story · 1 of 6</p>
+        </div>
+      </section>
+      <footer>made with all my heart <span aria-hidden="true">♥</span> for you</footer>
+    </main>
+  </body>
 </html>
